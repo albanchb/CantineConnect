@@ -3,12 +3,15 @@
 <p dir="auto">My project allows students to reserve their meal from an application in order to limit food waste, then the canteen service will be able to see the number of meals reserved and will cook according to that if</p>
 <div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Mobile App</h2><a id="user-content-frappe-mobile" class="anchor" aria-label="Permalink: Frappe Mobile" href="#frappe-mobile"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
 <p dir="auto">The application is currently available in web version</p>
-<p dir="auto"><kbd><a target="_blank" rel="noopener noreferrer" href="https://portfolio.byweb.fr/assets/images/cantineconnect/home.png"><img width="216" height="432" src="https://portfolio.byweb.fr/assets/images/cantineconnect/home.png" alt="Desk" style="max-width: 100%;"></a></kbd>
-<kbd><a target="_blank" rel="noopener noreferrer" href="https://portfolio.byweb.fr/assets/images/cantineconnect/stats.png"><img width="216" height="432" src="https://portfolio.byweb.fr/assets/images/cantineconnect/stats.png" alt="Awesome Bar" style="max-width: 100%;"></a></kbd>
+<p dir="auto"><kbd><a target="_blank" rel="noopener noreferrer" href="https://portfolio.byweb.fr/assets/images/cantineconnect/home1.png"><img width="216" height="432" src="https://portfolio.byweb.fr/assets/images/cantineconnect/home1.png" alt="Desk" style="max-width: 100%;"></a></kbd>
+<kbd><a target="_blank" rel="noopener noreferrer" href="https://portfolio.byweb.fr/assets/images/cantineconnect/reserv.png"><img width="216" height="432" src="https://portfolio.byweb.fr/assets/images/cantineconnect/reserv.png" alt="Awesome Bar" style="max-width: 100%;"></a></kbd>
 <div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Features:</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features:" href="#features"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
 <ol dir="auto">
+  Patch : 26/10/2024
 <li>Reservation of different types of meals</li>
-  
+<li>Meal reservation every day of the week</li>
+<li>  Password reset system</li>
+<li>Creation / Login with account</li>
 <h3>Admin Panel:</h3>
 
 <li>Visualization of the number of meals reserved, classified into the different types of meals</li>
