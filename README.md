@@ -1,24 +1,61 @@
-<article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto">CantineConnect Project</h1><a id="user-content-deprecation-warning" class="anchor" aria-label="Permalink: Deprecation Warning" href="#deprecation-warning"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
-<p dir="auto">Are you interested in the project ? <a href="https://portfolio.byweb.fr/#contact" rel="nofollow">Contact Me</a></p>
-<p dir="auto">My project allows students to reserve their meal from an application in order to limit food waste, then the canteen service will be able to see the number of meals reserved and will cook according to that if</p>
-<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Mobile App</h2><a id="user-content-frappe-mobile" class="anchor" aria-label="Permalink: Frappe Mobile" href="#frappe-mobile"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
-<p dir="auto">The application is currently available in web version</p>
-<p dir="auto"><kbd><a target="_blank" rel="noopener noreferrer" href="https://portfolio.byweb.fr/assets/images/cantineconnect/home1.png"><img width="216" height="432" src="https://portfolio.byweb.fr/assets/images/cantineconnect/home1.png" alt="Desk" style="max-width: 100%;"></a></kbd>
-<kbd><a target="_blank" rel="noopener noreferrer" href="https://portfolio.byweb.fr/assets/images/cantineconnect/reserv.png"><img width="216" height="432" src="https://portfolio.byweb.fr/assets/images/cantineconnect/reserv.png" alt="Awesome Bar" style="max-width: 100%;"></a></kbd>
-<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Features:</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features:" href="#features"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
-<ol dir="auto">
-  Patch : 26/10/2024
-<li>Reservation of different types of meals</li>
-<li>Meal reservation every day of the week</li>
-<li>  Password reset system</li>
-<li>Creation / Login with account</li>
-<h3>Admin Panel:</h3>
+## **CantineConnect**
 
-<li>Visualization of the number of meals reserved, classified into the different types of meals</li>
-<li>Database reset option</li>
+**CantineConnect** est une plateforme web conçue pour faciliter la gestion des réservations dans les cantines scolaires, entreprises ou tout autre établissement nécessitant un système de gestion de repas. L'application permet aux utilisateurs de réserver leur repas, de gérer leurs commandes, et aux administrateurs de suivre les réservations via un panneau d'administration.
 
-</ol>
-<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Development</h2><a id="user-content-development" class="anchor" aria-label="Permalink: Development" href="#development"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
-<ol start="0" dir="auto">
+Ce projet a été réalisé dans un cadre personnel, dans le but de mieux comprendre la gestion de bases de données et l'intégration de fonctionnalités de réservation en ligne.
 
-<p dir="auto">Would you like to participate in the project ? <a href="https://recrutements.byweb.fr/index.html" rel="nofollow">join the developer program</a></p>
+---
+
+## **Fonctionnalités principales**
+
+### **Pour les utilisateurs :**
+- **Réservation de repas :** Les utilisateurs peuvent choisir la date de leur réservation et le nombre de repas.
+- **Connexion/inscription :** Système d'inscription et de connexion pour gérer les réservations personnelles.
+- **Gestion de compte :** L'utilisateur peut modifier ses informations personnelles.
+
+### **Pour les administrateurs :**
+- **Panneau d'administration :** Les administrateurs peuvent gérer les utilisateurs, voir les réservations, et réinitialiser les mots de passe des utilisateurs.
+- **Gestion des réservations :** L'administrateur peut consulter toutes les réservations effectuées et gérer les demandes.
+- **Page de statistiques (`stats.php`)** : Cette page permet aux administrateurs de voir toutes les réservations effectuées sur la plateforme et d'analyser les tendances de réservation.
+
+---
+
+## **Pages principales du projet**
+
+### **1. reservation.php**
+La page `reservation.php` permet aux utilisateurs de réserver un repas. Un formulaire permet de sélectionner la date et le nombre de repas. Seuls les utilisateurs connectés peuvent effectuer une réservation.
+
+### **2. dashboard.php**
+Le panneau d'administration permet aux administrateurs de gérer les utilisateurs et les réservations. Les administrateurs peuvent voir la liste des utilisateurs, réinitialiser les mots de passe et gérer les réservations.
+
+### **3. login.php**
+La page de connexion permet aux utilisateurs et administrateurs de se connecter à leur compte. Elle vérifie les identifiants et crée une session pour l'utilisateur.
+
+### **4. register.php**
+La page d'inscription permet à un utilisateur de créer un compte. Lors de l'inscription, un email est envoyé pour confirmer l'adresse de l'utilisateur.
+
+### **5. stats.php**
+La page `stats.php` permet aux administrateurs de voir les réservations effectuées par les utilisateurs. Elle offre des statistiques pour faciliter la gestion des repas.
+
+---
+
+## **Technologies utilisées**
+
+- **PHP** : Pour le back-end, la gestion des connexions et des interactions avec la base de données.
+- **MySQL** : Pour le stockage des utilisateurs, des réservations et des paramètres de l'application.
+- **HTML/CSS** : Pour le front-end et la mise en page des différentes pages.
+- **JavaScript** : Pour la gestion dynamique de certaines fonctionnalités.
+
+---
+
+## **Installation**
+
+### Prérequis :
+- Un serveur web avec PHP et MySQL (ex. : XAMPP, WAMP, LAMP).
+- Un éditeur de texte (ex. : VSCode, Sublime Text).
+  
+### Étapes d'installation :
+
+1. **Clonez le repository :**
+   ```bash
+   git clone https://github.com/albanchb/CantineConnect.git
