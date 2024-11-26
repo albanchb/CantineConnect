@@ -48,14 +48,31 @@ La page `stats.php` permet aux administrateurs de voir les réservations effectu
 
 ---
 
-## **Installation**
+## **BDD**
 
 ### Prérequis :
 - Un serveur web avec PHP et MySQL (ex. : XAMPP, WAMP, LAMP).
-- Un éditeur de texte (ex. : VSCode, Sublime Text).
   
 ### Étapes d'installation :
 
-1. **Clonez le repository :**
-   ```bash
-   git clone https://github.com/albanchb/CantineConnect.git
+# Documentation de la base de données
+
+Ce projet utilise une base de données pour gérer les utilisateurs, les réservations, les réinitialisations de mot de passe et les repas. Voici la structure de la base de données, ainsi que des descriptions de chaque table.
+
+## Structure de la base de données
+
+### Table `users`
+
+Cette table contient les informations des utilisateurs inscrits dans le système.
+
+```sql
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,       -- Identifiant unique de l'utilisateur
+    nom VARCHAR(50),                         -- Nom de l'utilisateur
+    prenom VARCHAR(50),                      -- Prénom de l'utilisateur
+    mot_de_passe VARCHAR(255),               -- Mot de passe crypté de l'utilisateur
+    internat TINYINT(1),                     -- Indique si l'utilisateur est interne (1 pour oui, 0 pour non)
+    classe VARCHAR(50),                      -- Classe de l'utilisateur
+    username VARCHAR(50) UNIQUE,             -- Nom d'utilisateur (unique)
+);
+
