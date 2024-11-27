@@ -1,39 +1,45 @@
 <?php
 require 'config.php';
-session_start(); 
+session_start();
 
-$message = ''; 
+$message = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nom = strtolower(trim($_POST['nom'])); 
-    $prenom = strtolower(trim($_POST['prenom'])); 
-    $mot_de_passe = password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT);
+    $nom = strtolower(trim($_POST['nom']));
+    $prenom = strtolower(trim($_POST['prenom']));
+    $mot_de_passe = trim($_POST['mot_de_passe']);
+    $confirmer_mot_de_passe = trim($_POST['confirmer_mot_de_passe']);
     $internat = isset($_POST['internat']) ? 1 : 0;
     $classe = $_POST['classe'];
 
-    $username = $prenom . '.' . $nom;
-
-    $checkUsername = $conn->prepare("SELECT id FROM users WHERE username = ?");
-    $checkUsername->bind_param("s", $username);
-    $checkUsername->execute();
-    $result = $checkUsername->get_result();
-
-    if ($result->num_rows > 0) {
-        $message = "Le nom d'utilisateur '$username' est déjà utilisé. Veuillez essayer un autre prénom ou nom.";
+    if ($mot_de_passe !== $confirmer_mot_de_passe) {
+        $message = "Les mots de passe ne correspondent pas.";
     } else {
-        $sql = "INSERT INTO users (nom, prenom, username, mot_de_passe, internat, classe) VALUES (?, ?, ?, ?, ?, ?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssssss", $nom, $prenom, $username, $mot_de_passe, $internat, $classe);
+        $hashed_password = password_hash($mot_de_passe, PASSWORD_DEFAULT);
+        $username = $prenom . '.' . $nom;
 
-        if ($stmt->execute()) {
-            $user_id = $conn->insert_id;
-            $_SESSION['user_id'] = $user_id;
-            $_SESSION['pseudo'] = $prenom; 
+        $checkUsername = $conn->prepare("SELECT id FROM users WHERE username = ?");
+        $checkUsername->bind_param("s", $username);
+        $checkUsername->execute();
+        $result = $checkUsername->get_result();
 
-            header("Location: identifiant.php");
-            exit();
+        if ($result->num_rows > 0) {
+            $message = "Le nom d'utilisateur '$username' est déjà utilisé. Veuillez essayer un autre prénom ou nom.";
         } else {
-            $message = "Erreur lors de l'inscription. Veuillez réessayer plus tard.";
+            $sql = "INSERT INTO users (nom, prenom, username, mot_de_passe, internat, classe) VALUES (?, ?, ?, ?, ?, ?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("ssssss", $nom, $prenom, $username, $hashed_password, $internat, $classe);
+
+            if ($stmt->execute()) {
+                $user_id = $conn->insert_id;
+                $_SESSION['user_id'] = $user_id;
+                $_SESSION['pseudo'] = $prenom;
+
+                header("Location: identifiant.php");
+                exit();
+            } else {
+                $message = "Erreur lors de l'inscription. Veuillez réessayer plus tard.";
+            }
         }
     }
 }
@@ -123,22 +129,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         .login-link {
             text-align: center;
-            margin-top: 20px; /* Augmenter la marge pour le séparer du formulaire */
+            margin-top: 20px;
             font-size: 16px;
         }
 
         .login-link a {
-            color: #FF5722; /* Couleur distinctive */
-            font-weight: bold; /* Mettre le texte en gras */
-            text-decoration: none; /* Supprimer le soulignement */
-            border-bottom: 2px solid #FF5722; /* Soulignement par une bordure */
-            padding-bottom: 2px; /* Espacement pour la bordure */
-            transition: color 0.3s, border-color 0.3s; /* Transition pour un effet doux */
+            color: #FF5722;
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 2px solid #FF5722;
+            padding-bottom: 2px;
+            transition: color 0.3s, border-color 0.3s;
         }
 
         .login-link a:hover {
-            color: #FF914D; /* Couleur au survol */
-            border-color: #FF914D; /* Changer la couleur de la bordure au survol */
+            color: #FF914D;
+            border-color: #FF914D;
         }
 
         footer {
@@ -186,20 +192,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 font-size: 14px;
             }
         }
+            .notice-warning {
+             background-color: #fff3cd; 
+             color: #856404;
+             border: 1px solid #ffeeba; 
+             border-radius: 5px;
+             padding: 15px;
+             font-size: 16px;
+             font-weight: bold;
+             text-align: center;
+             margin-bottom: 20px;
+             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
     </style>
+    <script>
+        function validateForm() {
+            const password = document.querySelector('input[name="mot_de_passe"]').value;
+            const confirmPassword = document.querySelector('input[name="confirmer_mot_de_passe"]').value;
+            if (password !== confirmPassword) {
+                alert("Les mots de passe ne correspondent pas.");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
-<header>CantineConnect
-    </header>
+<body>
+    <header>CantineConnect</header>
 
     <div class="container">
         <h2>Inscription</h2>
+        <p class="notice-warning">
+    ⚠️ Veuillez <strong>noter</strong> ou <strong>sauvegarder</strong> votre mot de passe. Nous ne pourrons pas le récupérer si vous le perdez.
+</p>
         <?php if ($message): ?>
             <p style="color: red;"><?= htmlspecialchars($message) ?></p>
         <?php endif; ?>
-        <form method="POST" action="">
+        <form method="POST" action="" onsubmit="return validateForm()">
             <input type="text" name="prenom" placeholder="Prénom" required>
             <input type="text" name="nom" placeholder="Nom" required>
             <input type="password" name="mot_de_passe" placeholder="Mot de passe" required>
+            <input type="password" name="confirmer_mot_de_passe" placeholder="Confirmez le mot de passe" required>
 
             <label for="classe">Classe :</label>
             <select name="classe" required>
