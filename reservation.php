@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <title>Réservation de repas - CantineConnect</title>
-     <style>
+    <style>
         body {
             font-family: 'Montserrat', sans-serif;
             margin: 0;
@@ -115,6 +115,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             display: flex;
             flex-direction: column;
             gap: 15px;
+            margin-top: 20px; 
+
+        }
+
+        #selected_date {
+             text-align: center;
+             margin-top: 15px;
+             font-weight: bold;
+             font-size: 18px; 
+             margin-bottom: 30px; 
         }
 
         input, select {
@@ -178,6 +188,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             color: #333;
         }
 
+        .legend {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        .legend span {
+            display: inline-block;
+            margin-right: 15px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .legend .red {
+            background-color: #FF6347;
+        }
+
+        .legend .white {
+            background-color: #FFFFFF;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+
+        .legend .green {
+            background-color: #4CAF50;
+        }
+
         footer {
             background-color: #FF914D;
             padding: 20px;
@@ -196,47 +235,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             font-size: 12px;
             color: #FFDAB9;
         }
-
-        @media (max-width: 768px) {
-            header {
-                font-size: 20px;
-            }
-
-            .container {
-                width: 95%;
-            }
-
-            .calendar th, .calendar td {
-                padding: 8px;
-            }
-        }
-
-        @media (max-width: 414px) {
-            header {
-                font-size: 18px;
-            }
-
-            .container {
-                padding: 15px;
-            }
-
-            button {
-                font-size: 0.9em;
-            }
-        }
     </style>
-</head>
-</head>
+<!-- Fin du style -->
+<!-- Début du JavaScript -->
 
-<script>
-   document.addEventListener("DOMContentLoaded", function() {
-    let reservedDates = <?php echo json_encode($reserved_dates); ?>;
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    let reservedDates = <?php echo json_encode($reserved_dates); ?> || []; 
     let currentDate = new Date();
-    currentDate.setHours(0, 0, 0, 0); 
+    currentDate.setHours(0, 0, 0, 0);
 
     function createCalendar() {
         const calendar = document.getElementById("calendar");
-        calendar.innerHTML = ""; 
+        if (!calendar) return;
+
+        calendar.innerHTML = "";
         const date = new Date();
         const month = date.getMonth();
         const year = date.getFullYear();
@@ -286,16 +299,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     window.selectDate = function(dateStr) {
+        const options = { weekday: 'long', month: 'long', day: 'numeric' };
+        const formattedDate = new Date(dateStr).toLocaleDateString('fr-FR', options);
         document.getElementById("reservation_date").value = dateStr;
-        document.getElementById("selected_date").innerText = `Date sélectionnée : ${dateStr}`;
-        document.getElementById("modal").style.display = "none";
+        document.getElementById("selected_date").innerText = `Date sélectionnée : ${formattedDate}`;
     };
 
     createCalendar();
 });
 
-</script>
+    </script>
+    <!-- Fin du JavaScript, -->
+    <!-- Début du HTML, -->
 
+</head>
 <body>
     <header>
         CantineConnect - Réservez vos repas
@@ -305,34 +322,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h2>Réservation de repas</h2>
 
         <div class="warning-block">
-        Attention : Toute réservation effectuée moins de 24 heures avant le jour sélectionné ne sera pas prise en compte.
+            Attention : Toute réservation effectuée moins de 24 heures avant le jour sélectionné ne sera pas prise en compte.
         </div>
 
         <table class="calendar" id="calendar"></table>
 
         <div id="selected_date" style="text-align: center; margin-top: 15px; font-weight: bold;">Sélectionnez une date dans le calendrier</div>
-        <p>
+
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
             <input type="hidden" id="reservation_date" name="reservation_date" value="">
 
+            <label for="repas_midi">Choisissez votre menu pour le midi :</label>
             <select name="repas_midi" id="repas_midi" required>
                 <option value="viande">Viande</option>
                 <option value="vegetarien">Végétarien</option>
                 <option value="halal">Halal</option>
-
             </select>
 
             <?php if ($internat): ?>
-            <select name="repas_soir" id="repas_soir">
-                <option value="viande">Viande</option>
-                <option value="vegetarien">Végétarien</option>
-                <option value="halal">Halal</option>
-
-            </select>
+                <label for="repas_soir">Choisissez votre menu pour le soir :</label>
+                <select name="repas_soir" id="repas_soir">
+                    <option value="viande">Viande</option>
+                    <option value="vegetarien">Végétarien</option>
+                    <option value="halal">Halal</option>
+                </select>
             <?php endif; ?>
 
             <button type="submit">Réserver</button>
         </form>
+
+        <div class="legend">
+            <span class="red">Rouge : Jour non réservable</span>
+            <span class="white">Blanc : Jour réservable</span>
+            <span class="green">Vert : Jour déjà réservé</span>
+        </div>
     </div>
 
     <footer>
