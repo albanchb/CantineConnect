@@ -71,7 +71,6 @@ CREATE TABLE users (
     nom VARCHAR(50),                         -- Nom de l'utilisateur
     prenom VARCHAR(50),                      -- Prénom de l'utilisateur
     mot_de_passe VARCHAR(255),               -- Mot de passe crypté de l'utilisateur
-    internat TINYINT(1),                     -- Indique si l'utilisateur est interne (1 pour oui, 0 pour non)
     classe VARCHAR(50),                      -- Classe de l'utilisateur
     username VARCHAR(50) UNIQUE,             -- Nom d'utilisateur (unique)
 );
